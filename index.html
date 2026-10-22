@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Aarogya Mitra – Healthcare at Your Doorstep</title>
+<link rel="stylesheet" href="styles.css"></head><body>
+<header><div class="w"><nav id="nav"></nav></div></header>
+<main class="w" id="app" tabindex="-1"></main>
+<footer><div class="w" id="foot"></div></footer><div id="toast" role="status"></div>
+<button id="vfab" class="b" onclick="openVA()">🎤 Talk to Aarogya Mitra</button>
+<section id="va" hidden role="dialog" aria-label="Aarogya Mitra voice assistant">
+<div class="row" style="justify-content:space-between"><b><span style="font-size:1.6em" aria-hidden="true">🧑‍⚕️</span> Aarogya Mitra</b><button class="b r s" onclick="closeVA()">Close ✖</button></div>
+<div id="vst" aria-live="polite">Ready</div><small id="vnote"></small><div class="chat" id="vlog" aria-live="polite"></div>
+<div class="row"><button id="vmic" class="b" onclick="listen()">🎤 Speak</button><button class="b o" onclick="speak(V.last)">🔁 Repeat</button><button class="b r" onclick="stopAll()">⏹ Stop speaking</button></div>
+<div class="row" style="margin-top:8px"><select id="vl" aria-label="Assistant language" style="width:auto" onchange="V.lang=this.value"><option value="en">English</option><option value="te">తెలుగు</option><option value="hi">हिंदी</option></select><label style="margin:0"><input type="checkbox" id="vslow" onchange="V.slow=this.checked"> Speak slowly</label><label style="margin:0"><input type="checkbox" id="vtx" onchange="V.txt=this.checked;stopAll();$('#vmic').hidden=V.txt"> Text only</label></div>
+<div class="row" style="margin-top:8px"><input id="vi" aria-label="Type to the assistant" placeholder="Type here…" style="width:min(100%,260px)" onkeydown="if(event.key=='Enter')sendT()"><button class="b" onclick="sendT()">Send</button></div>
+<small>The microphone is on only while it says Listening. Audio is not recorded or stored by this page; your browser’s speech service may process it. Passwords are never spoken or sent. This helper guides you around the site; it gives no medical advice.</small></section>
+<script src="app.js"></script></body></html>
